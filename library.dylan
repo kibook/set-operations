@@ -23,7 +23,7 @@ define module set-operations
     set-difference!,
     set-product,
     set-symmetric-difference,
-    set-contains,
+    set-contains?,
     power-set,
     set;
 end module set-operations;
