@@ -14,6 +14,7 @@ define module set-operations
   use streams;
   use print;
   export
+    $empty-set,
     set-union,
     set-union!,
     set-intersection,
@@ -23,5 +24,6 @@ define module set-operations
     set-product,
     set-symmetric-difference,
     set-contains,
+    power-set,
     set;
 end module set-operations;

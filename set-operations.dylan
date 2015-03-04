@@ -2,6 +2,10 @@ module: set-operations
 author: kibook
 synopsis: Fundamental set operations
 
+// Empty set
+
+define constant $empty-set = make(<set>);
+
 // Union
 
 define method set-union
@@ -121,14 +125,46 @@ define method set-contains
   set-union(A, B) = A
 end method set-contains;
 
+// Addition
+
+define sideways method \+
+    (A :: <set>, e)
+ => (N :: <set>)
+  let N = shallow-copy(A);
+  add!(N, e);
+  N
+end method \+;
+
+// Removal
+
+define sideways method \-
+    (A :: <set>, e)
+ => (N :: <set>)
+  let N = shallow-copy(A);
+  remove!(N, e);
+  N
+end method \-;
+
+// Power set
+
+define method power-set
+    (A :: <set>)
+ => (P :: <set>)
+  reduce(method(ps, e) ps + map(_ + set(e), ps) end, set(set()), A)
+end method power-set;
+
 // Other helpers
 
 define function set
     (#rest args)
  => (new-set :: <set>)
-  let new-set = make(<set>);
-  do(curry(add!, new-set), args);
-  new-set
+  if (args.empty?)
+    $empty-set
+  else
+    let new-set = make(<set>);
+    do(curry(add!, new-set), args);
+    new-set
+  end if
 end function set;
 
 define sideways method print-object
