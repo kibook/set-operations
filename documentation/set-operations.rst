@@ -176,6 +176,19 @@ Subsets
    Determines whether set B is a subset of set A, or whether set A contains
    all the elements of set B.
 
+Power set
+=========
+
+.. method:: power-set
+   :specializer: <set>
+
+   :signature: power-set *A* => *P*
+
+   :param A: An instance of :class:`<set>`
+   :value P: An instance of :class:`<set>`.
+
+   Returns a new set, which is the power set of *A*.
+
 Constructors
 ============
 
