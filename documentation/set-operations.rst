@@ -11,13 +11,6 @@ The set-operations module
 
 Fundamental set operations
 
-Empty set
-=========
-
-.. constant:: $empty-set
-
-   A set containing no elements.
-
 Union
 =====
 
@@ -198,13 +191,9 @@ Constructors
 
    :param #rest arguments: The elements of the set.
    
-   :value set: A freshly allocated instance of <set> or $empty-set.
+   :value set: A freshly allocated instance of <set>.
 
    Creates and returns a freshly allocated set.
-
-   If no arguments are supplied, the $empty-set constant is
-   returned instead, therefore all empty sets created with set()
-   will be identical.
 
 Other
 =====

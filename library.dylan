@@ -14,7 +14,6 @@ define module set-operations
   use streams;
   use print;
   export
-    $empty-set,
     set-union,
     set-union!,
     set-intersection,

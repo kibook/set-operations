@@ -2,10 +2,6 @@ module: set-operations
 author: kibook
 synopsis: Fundamental set operations
 
-// Empty set
-
-define constant $empty-set = make(<set>);
-
 // Union
 
 define method set-union
@@ -158,13 +154,9 @@ end method power-set;
 define function set
     (#rest args)
  => (new-set :: <set>)
-  if (args.empty?)
-    $empty-set
-  else
-    let new-set = make(<set>);
-    do(curry(add!, new-set), args);
-    new-set
-  end if
+  let new-set = make(<set>);
+  do(curry(add!, new-set), args);
+  new-set
 end function set;
 
 define sideways method print-object
