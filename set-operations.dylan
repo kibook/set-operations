@@ -119,11 +119,11 @@ end method \/;
 
 // Subset
 
-define method set-contains
+define method set-contains?
     (A :: <set>, B :: <set>)
  => (subset? :: <boolean>)
   set-union(A, B) = A
-end method set-contains;
+end method set-contains?;
 
 // Addition
 
